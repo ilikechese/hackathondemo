@@ -12,9 +12,10 @@ function setup() {
 
 function draw() {
   // put drawing code here
-  function homescreen(){
+  function homescreen1(){
       rect(22,24,183,35)
       fill(249, 247, 230)
+
       function loginbutton(){
         rect(230,24,57,35)
         fill(255,249,238)
@@ -47,7 +48,7 @@ function draw() {
       terms()
         }
 
-homescreen()
+homescreen1()
 
 }
 
