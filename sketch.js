@@ -57,21 +57,18 @@ function draw() {
       order()
       terms()
     }
-    function secret(){
-      rect(200,200,10,10)
-      fill(30,30,30)
-    }
+
     function loginpage(){
       function log(){
         rect(22,290,288,179)
         fill(228,229,229)
       }
       function email(){
-        rect(27,305,244,36)
+        rect(45,305,244,36)
         fill(228,229,229)
       }
       function password(){
-        rect(27,372,244,36)
+        rect(45,372,244,36)
         fill(225,225,225)
       }
       log()
