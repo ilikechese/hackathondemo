@@ -7,8 +7,9 @@ function preload(){
 function setup() {
   createCanvas(windowWidth,windowHeight)
   mgr = new SceneManager()
-  mgr.addScene(loginpage)
   mgr.addScene(homescreen1)
+  mgr.addScene(loginpage)
+
 
   mgr.showNextScene()
 }
@@ -18,15 +19,14 @@ function draw() {
   mgr.draw()
 }
 
-function mousePressed() {
-  console.log("detected mouse press")
-  if (mode === 0) {
-    mode = 1;
-    mgr.showScene(homescreen1)
-  } else if (mode === 1) {
-    mode = 0;
-    mgr.showScene(loginpage)
-  }
+function keyPressed()
+{
+    mgr.handleEvent("keyPressed");
+}
+
+function mousePressed()
+{
+    mgr.handleEvent("mousePressed");
 }
 
 // SCENES BELOW
@@ -48,6 +48,15 @@ function homescreen1(){
         base()
         order()
         terms()
+      }
+
+      this.mousePressed = function(){
+        console.log("pressed mouse on homescreen 1!")
+        this.sceneManager.showNextScene()
+      }
+
+      this.keyPressed = function(){
+        console.log(key)
       }
 
       function loginbutton(){
@@ -82,6 +91,12 @@ function homescreen1(){
 }
 
 function loginpage(){
+
+  this.mousePressed = function(){
+    console.log("logged in!")
+    //this.sceneManager.showNextScene()
+  }
+
   this.draw = function(){
     background(255,255,255)
     log()
