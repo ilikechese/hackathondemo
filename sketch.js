@@ -1,33 +1,54 @@
 var mode = 0
-
+var mgr
 function preload(){
   // put preload code here
 }
 
 function setup() {
   createCanvas(windowWidth,windowHeight)
-  // put setup code here
-  background(255,255,255)
+  mgr = new SceneManager()
+  mgr.addScene(loginpage)
+  mgr.addScene(homescreen1)
+
+  mgr.showNextScene()
 }
 
 
 function draw() {
-  // put drawing code here
+  mgr.draw()
+}
+
+function mousePressed() {
+  console.log("detected mouse press")
   if (mode === 0) {
-     homescreen1()
-   } else if (mode === 1) {
-     loginpage()
-   } else if (mode === 2) {
-     secret()
-   }
+    mode = 1;
+    mgr.showScene(homescreen1)
+  } else if (mode === 1) {
+    mode = 0;
+    mgr.showScene(loginpage)
+  }
+}
 
-  function homescreen1(){
-      fill(215, 215, 215)
-      rect(22,24,183,35)
-      let s = 'Food For All';
-      fill(0,0,0)
-      text(s, 30, 40, 70, 80); // Text wraps within text box
+// SCENES BELOW
 
+function homescreen1(){
+
+      this.draw = function(){
+        background(255,255,255)
+        fill(215, 215, 215)
+        rect(22,24,183,35)
+        let s = 'Food For All';
+        fill(0,0,0)
+        text(s, 30, 40, 70, 80); // Text wraps within text box
+
+
+        loginbutton()
+        aboutus()
+        why()
+        base()
+        order()
+        terms()
+      }
 
       function loginbutton(){
         fill(249, 247, 230)
@@ -56,41 +77,31 @@ function draw() {
         fill(250,250,250)
         rect(163,427,119,15)
       }
-      loginbutton()
-      aboutus()
-      why()
-      base()
-      order()
-      terms()
-    }
 
-    function loginpage(){
-      function log(){
-        fill(250,250,250)
-        rect(46,294,288,179)
-      }
-      function email(){
-        fill(228,229,229)
-        rect(70,325,244,36)
 
-      }
-      function password(){
-        fill(228,229,229)
-        rect(70,392,244,36)
+}
 
-      }
-      log()
-      email()
-      password()
-    }
+function loginpage(){
+  this.draw = function(){
+    background(255,255,255)
+    log()
+    email()
+    password()
   }
 
-function mousePressed() {
-  if (mode === 0) {
-    mode = 1;
-  } else if (mode === 1) {
-    mode = 2;
-  } else if (mode === 2) {
-    mode = 0;
+  function log(){
+    fill(250,250,250)
+    rect(46,294,288,179)
   }
+  function email(){
+    fill(228,229,229)
+    rect(70,325,244,36)
+
+  }
+  function password(){
+    fill(228,229,229)
+    rect(70,392,244,36)
+
+  }
+
 }
