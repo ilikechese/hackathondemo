@@ -33,9 +33,9 @@ function draw() {
       function loginbutton(){
         fill(249, 247, 230)
         rect(230,24,57,35)
-        let a = 'ABOUT US'
+        let a = 'ABOUT US';
         fill(0,0,0)
-        text(a, 30, 80, 70, 80)
+        text(a, 30, 80, 70, 80);
       }
       function aboutus(){
         fill(255, 249, 238)
@@ -68,16 +68,16 @@ function draw() {
     function loginpage(){
       function log(){
         fill(250,250,250)
-        rect(22,294,288,179)
+        rect(46,294,288,179)
       }
       function email(){
         fill(228,229,229)
-        rect(45,325,244,36)
+        rect(70,325,244,36)
 
       }
       function password(){
         fill(228,229,229)
-        rect(45,392,244,36)
+        rect(70,392,244,36)
 
       }
       log()
