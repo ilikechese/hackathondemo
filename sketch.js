@@ -124,6 +124,35 @@ function loginpage(){
   function log(){
     fill(250,250,250)
     rect(46,294,288,179)
+    function emailtext(){
+      textSize(12)
+      let f = 'email'
+      fill(0,0,0)
+      text(f, 70,310,244,36)
+    }
+    function passtext(){
+      textSize(12)
+      let g = 'password'
+      fill(0,0,0)
+      text(g, 70, 375, 244, 36)
+    }
+    function logintext(){
+      textSize(15)
+      let h = 'login'
+      fill(0,0,0)
+      text(h, 160, 305, 244, 36)
+    }
+    function forgot(){
+      textSize(10)
+      let i = 'forgot password?'
+      fill(0,0,0)
+      text(i, 70, 450, 244, 36)
+    }
+    emailtext()
+    passtext()
+    logintext()
+    forgot()
+
   }
   function email(){
     fill(228,229,229)
