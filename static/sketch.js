@@ -1,7 +1,8 @@
 var mode = 0
 var mgr
+let img
 function preload(){
-  // put preload code here
+  img1 = loadImage('../assets/food1.jpg')
 }
 
 function setup() {
@@ -9,6 +10,7 @@ function setup() {
   mgr = new SceneManager()
   mgr.addScene(homescreen1)
   mgr.addScene(loginpage)
+  image(img1,194,88)
 
 
   mgr.showNextScene()
@@ -19,15 +21,6 @@ function draw() {
   mgr.draw()
 }
 
-function keyPressed()
-{
-    mgr.handleEvent("keyPressed");
-}
-
-function mousePressed()
-{
-    mgr.handleEvent("mousePressed");
-}
 
 // SCENES BELOW
 
