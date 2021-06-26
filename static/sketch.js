@@ -151,15 +151,13 @@ function loginpage(){
 
 function questionpage(){
 background(250,250,250)
-let inp = createInput('');
-inp.position(495, -162);
-inp.size(278);
-inp.input(myInputEvent);
-
-function myInputEvent() {
-  console.log('you are typing: ', this.value());
+this.setup = function(){
+    var inp = createInput()
+    inp.position(100,190)
+    console.log(but)
+  }
+  function submitReq(){
+    var textinp = inp.value()
+    console.log(textinp)
 }
-
-
-
 }
