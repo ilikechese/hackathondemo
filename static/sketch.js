@@ -176,9 +176,7 @@ this.setup = function(){
 }
 
 function questionpage(){
-background(250,250,250)
-fill(250,250,250)
-rect(190,10,300,450)
+
 this.setup = function(){
     let col3 = color(196, 196, 196)
     inp1 = createInput()
@@ -209,6 +207,17 @@ this.setup = function(){
      mgr.showscene(questionpage2)
      btn4.hide()
    }
+
+this.draw = function(){
+  background(250,250,250)
+  fill(250,250,250)
+  rect(190,10,300,450)
+}
+
+function qn1(){
+    fill(255, 249, 238)
+    rect(495,100,278,29)
+}
 
   }
 
