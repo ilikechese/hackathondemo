@@ -29,12 +29,14 @@ function homescreen1(){
       btn = createButton("Login")
       btn.style('background-colour', col1)
       btn.position(230,24,57,35)
+      btn.size(57,35)
       btn.mousePressed(enter)
-
+      textSize(5)
       col2 = color(255,255,255)
       btn2 = createButton("Forms")
       btn.style('background-colour', col2)
       btn2.position(29,427,119,15)
+      btn2.size(119,15)
       btn2.mousePressed(form)
     }
     function enter(){
@@ -48,7 +50,7 @@ function homescreen1(){
     btn.hide()
     }
 
-       this.draw = function(){
+     this.draw = function(){
           background(255,255,255)
           fill(215, 215, 215)
           rect(22,24,183,35)
@@ -97,17 +99,44 @@ function homescreen1(){
 
 function loginpage(){
 
+this.setup = function(){
+    let col = color(228,229,229)
+        inp2 = createInput()
+        inp2.style('background-color', col)
+        inp2.position(70,325,244,36)
+        inp2.size(244,36)
+
+    let col1 = color(228,229,229)
+        inp3 = createInput()
+        inp3.style('background-color', col1)
+        inp3.position(70,395,244,36)
+        inp3.size(244,36)
+
+    let col2 = color(249, 247, 230)
+    btn3 = createButton('Login')
+    btn3.position(200,450)
+    btn3.style('background-color',col2)
+    btn3.mousePressed(back)
+
+    function back(){
+      mgr.showScene(homescreen1)
+      btn3.hide()
+      inp2.hide()
+      inp3.hide()
+      btn2.show()
+      btn.show()
+    }
+  }
 
   this.draw = function(){
     background(255,255,255)
     log()
-    email()
-    password()
   }
 
   function log(){
     fill(250,250,250)
     rect(46,294,288,179)
+
     function emailtext(){
       textSize(12)
       let f = 'email'
@@ -136,28 +165,20 @@ function loginpage(){
     passtext()
     logintext()
     forgot()
-
   }
-  function email(){
-    fill(228,229,229)
-    rect(70,325,244,36)
 
-  }
-  function password(){
-    fill(228,229,229)
-    rect(70,392,244,36)
-}
 }
 
 function questionpage(){
 background(250,250,250)
 this.setup = function(){
-    var inp = createInput()
-    inp.position(100,190)
-    console.log(but)
+    let col3 = color(196, 196, 196)
+    inp1 = createInput()
+    inp1.style('background-color', col3)
+    inp1.position(200,250,278,57)
+    inp1.size(278,57)
+
+
   }
-  function submitReq(){
-    var textinp = inp.value()
-    console.log(textinp)
-}
+
 }
