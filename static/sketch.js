@@ -32,42 +32,31 @@ function mousePressed()
 // SCENES BELOW
 
 function homescreen1(){
+      this.setup = function(){
+      btn = createButton("Login")
+      btn.position(230,24,57,35)
+      btn.mousePressed(enter)
+    }
+    function enter(){
+    mgr.showScene(loginpage)
+    btn.hide()
+  }
 
-      this.draw = function(){
-        background(255,255,255)
-        fill(215, 215, 215)
-        rect(22,24,183,35)
-        textSize(16)
-        let s = 'FoodForAll';
-        fill(0,0,0)
-        text(s, 30, 40, 70, 80); // Text wraps within text box
+       this.draw = function(){
+          background(255,255,255)
+          fill(215, 215, 215)
+          rect(22,24,183,35)
+          let s = 'Food For All';
+          fill(0,0,0)
+          text(s, 30, 40, 70, 80); // Text wraps within text box
 
+             aboutus()
+             why()
+             base()
+             order()
+             terms()
+           }
 
-        loginbutton()
-        aboutus()
-        why()
-        base()
-        order()
-        terms()
-      }
-
-      this.mousePressed = function(){
-        console.log("pressed mouse on homescreen 1!")
-        this.sceneManager.showNextScene()
-      }
-
-      this.keyPressed = function(){
-        console.log(key)
-      }
-
-      function loginbutton(){
-        fill(249, 247, 230)
-        rect(230,24,57,35)
-        textSize(15)
-        let a = 'login';
-        fill(0,0,0)
-        text(a, 245, 35, 70, 150)
-      }
 
       function aboutus(){
         fill(255, 249, 238)
@@ -109,10 +98,6 @@ function homescreen1(){
 
 function loginpage(){
 
-  this.mousePressed = function(){
-    console.log("logged in!")
-    //this.sceneManager.showNextScene()
-  }
 
   this.draw = function(){
     background(255,255,255)
@@ -162,7 +147,5 @@ function loginpage(){
   function password(){
     fill(228,229,229)
     rect(70,392,244,36)
-
-  }
-
+}
 }
