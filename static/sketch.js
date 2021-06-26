@@ -1,8 +1,8 @@
 var mode = 0
 var mgr
-let img
+
 function preload(){
-  img1 = loadImage('../assets/food1.jpg')
+
 }
 
 function setup() {
@@ -10,7 +10,7 @@ function setup() {
   mgr = new SceneManager()
   mgr.addScene(homescreen1)
   mgr.addScene(loginpage)
-  image(img1,194,88)
+
 
 
   mgr.showNextScene()
@@ -29,11 +29,19 @@ function homescreen1(){
       btn = createButton("Login")
       btn.position(230,24,57,35)
       btn.mousePressed(enter)
+
+      btn2 = createButton("Forms")
+      btn2.position(29,427,119,15)
+      btn2.mousePressed(form)
     }
     function enter(){
     mgr.showScene(loginpage)
     btn.hide()
   }
+    function form(){
+      mgr.showScene(questionpage)
+      btn.hide()
+    }
 
        this.draw = function(){
           background(255,255,255)
@@ -46,7 +54,6 @@ function homescreen1(){
              aboutus()
              why()
              base()
-             order()
              terms()
            }
 
@@ -70,13 +77,6 @@ function homescreen1(){
         fill(196, 196, 196)
         rect(22,422,265,26)
       }
-      function order(){
-        fill(250,250,250)
-        rect(29,427,119,15)
-        let d = 'food form'
-        fill(0,0,0)
-        text(d,32, 430, 70, 150)
-      }
       function terms(){
         fill(250,250,250)
         rect(163,427,119,15)
@@ -88,6 +88,7 @@ function homescreen1(){
 
 
 }
+
 
 function loginpage(){
 
