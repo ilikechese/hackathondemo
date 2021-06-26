@@ -12,7 +12,6 @@ function setup() {
   mgr.addScene(loginpage)
 
 
-
   mgr.showNextScene()
 }
 
@@ -25,22 +24,28 @@ function draw() {
 // SCENES BELOW
 
 function homescreen1(){
-      this.setup = function(){
+  this.setup = function(){
+      col1 = color(249, 247, 230)
       btn = createButton("Login")
+      btn.style('background-colour', col1)
       btn.position(230,24,57,35)
       btn.mousePressed(enter)
 
+      col2 = color(255,255,255)
       btn2 = createButton("Forms")
+      btn.style('background-colour', col2)
       btn2.position(29,427,119,15)
       btn2.mousePressed(form)
     }
     function enter(){
     mgr.showScene(loginpage)
     btn.hide()
+    btn2.hide()
   }
     function form(){
-      mgr.showScene(questionpage)
-      btn.hide()
+    mgr.showScene(questionpage)
+    btn2.hide()
+    btn.hide()
     }
 
        this.draw = function(){
@@ -142,4 +147,19 @@ function loginpage(){
     fill(228,229,229)
     rect(70,392,244,36)
 }
+}
+
+function questionpage(){
+background(250,250,250)
+let inp = createInput('');
+inp.position(495, -162);
+inp.size(278);
+inp.input(myInputEvent);
+
+function myInputEvent() {
+  console.log('you are typing: ', this.value());
+}
+
+
+
 }
