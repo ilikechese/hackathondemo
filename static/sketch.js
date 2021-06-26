@@ -31,7 +31,6 @@ function homescreen1(){
       btn.position(230,24,57,35)
       btn.size(57,35)
       btn.mousePressed(enter)
-      textSize(5)
       col2 = color(255,255,255)
       btn2 = createButton("Forms")
       btn.style('background-colour', col2)
@@ -52,17 +51,24 @@ function homescreen1(){
 
      this.draw = function(){
           background(255,255,255)
-          fill(215, 215, 215)
-          rect(22,24,183,35)
-          let s = 'Food For All';
-          fill(0,0,0)
-          text(s, 30, 40, 70, 80); // Text wraps within text box
-
+          fill(255,255,255)
+          rect(10,20,300,450)
+            title()
              aboutus()
              why()
              base()
              terms()
            }
+
+
+
+      function title(){
+        fill(215, 215, 215)
+        rect(22,24,183,35)
+        let s = 'Food For All';
+        fill(0,0,0)
+        text(s, 30, 40, 70, 80); // Text wraps within text box
+  }
 
 
       function aboutus(){
@@ -171,6 +177,8 @@ this.setup = function(){
 
 function questionpage(){
 background(250,250,250)
+fill(250,250,250)
+rect(190,10,300,450)
 this.setup = function(){
     let col3 = color(196, 196, 196)
     inp1 = createInput()
@@ -179,6 +187,33 @@ this.setup = function(){
     inp1.size(278,57)
 
 
+    let col5 = color(255,255,255)
+    inp4 = createInput()
+    inp4.style('background-color',col5)
+    inp4.position(200,380)
+
+    inp5 = createInput()
+    inp5.style('background-color',col3)
+    inp5.position(200,400)
+    inp5.size(278,29)
+
+    let col6 = color(238, 238, 238)
+    btn4 = createButton('next')
+    btn4.position(375,460)
+    btn4.style('background-color',col6)
+    btn4.size(107,15)
+    btn4.mousePressed(page1)
+
+
+    function page1(){
+     mgr.showscene(questionpage2)
+     btn4.hide()
+   }
+
   }
 
+}
+
+function questionpage2(){
+  background(250,250,250)
 }
