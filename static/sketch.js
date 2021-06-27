@@ -408,13 +408,16 @@ function homescreen2(){
     text(z, 25,285,120,50)
     let y = 'alpha'
     fill(0,0,0)
-    text(y, 25,55,120,50)
+    text(y, 25,55,125,50)
     let x = 'beta'
     fill(0,0,0)
-    text(x, 25,115,120,50)
+    text(x, 25,120,120,50)
     let u = 'bravo '
     fill(0,0,0)
-    text(u, 25,235,120,50)
+    text(u, 25,175,120,50)
+    let he = 'charlie'
+    fill(0,0,0)
+    text(he, 25,235,120,50)
     let v = 'delta'
     fill(0,0,0)
     text(v, 25,295,120,50)
