@@ -1,7 +1,11 @@
 var mode = 0
 var mgr
+var img
 
 function preload(){
+  img = loadImage('../assets/food.jpeg')
+  img1 = loadImage('../assets/food1.jpeg')
+  img2 = loadImage('../assets/map.jpeg')
 
 }
 
@@ -33,10 +37,11 @@ function homescreen1(){
       btn.mousePressed(enter)
       col2 = color(255,255,255)
       btn2 = createButton("Forms")
-      btn.style('background-colour', col2)
+      btn2.style('background-colour', col2)
       btn2.position(29,427,119,15)
       btn2.size(119,15)
       btn2.mousePressed(form)
+
     }
     function enter(){
     mgr.showScene(loginpage)
@@ -54,6 +59,8 @@ function homescreen1(){
           background(255,255,255)
           fill(255,255,255)
           rect(10,20,300,450)
+          image(img1, 140, 87, 155, 150)
+          image(img, 22, 260, 160, 137)
             title()
              aboutus()
              why()
@@ -74,7 +81,7 @@ function homescreen1(){
 
       function aboutus(){
         fill(255, 249, 238)
-        rect(22,87,141,152)
+        rect(22,87,100,152)
         textSize(13)
         let b = 'we are trying to help people eat and get fat, mainly for poor people'
         fill(0,0,0)
@@ -82,10 +89,10 @@ function homescreen1(){
       }
       function why(){
         fill(248, 244, 231)
-        rect(176,260,111,137)
+        rect(190,260,111,137)
         let c = 'we want everyone to have food'
         fill(0,0,0)
-        text(c, 180, 265 ,70, 150)
+        text(c, 200, 265 ,70, 150)
       }
       function base(){
         fill(196, 196, 196)
@@ -125,6 +132,14 @@ this.setup = function(){
     btn3.style('background-color',col2)
     btn3.mousePressed(back)
 
+    let red = color(250,0,0)
+    textSize(12)
+    btn8 = createButton("companies")
+    btn8.style('background-color', red)
+    btn8.position(250,450)
+    btn8.mousePressed(company)
+
+
     function back(){
       mgr.showScene(homescreen1)
       btn3.hide()
@@ -134,6 +149,17 @@ this.setup = function(){
       btn.show()
 
     }
+    function company(){
+    mgr.showScene(homescreen2)
+    btn.hide()
+    btn2.hide()
+    btn8.hide()
+    btn3.hide()
+    inp2.hide()
+    inp3.hide()
+
+    }
+
   }
 
   this.draw = function(){
@@ -213,6 +239,8 @@ this.setup = function(){
       inp4.hide()
       inp5.hide()
    }
+
+
  }
 
 this.draw = function(){
@@ -300,6 +328,7 @@ function questionpage2(){
     background(250,250,250)
     fill(250,250,250)
     rect(10,20,300,450)
+    image(img2, 15, 110, 290, 90)
     othertext()
 
 }
@@ -318,10 +347,16 @@ function othertext(){
   fill(0,0,0)
   textSize(25)
   text(r,60,350,240,300)
-
-
+}
 
 }
 
-
+function homescreen2(){
+  this.setup = function(){
+    inp9 = createInput()
+    inp9.position(20,300)
+  }
+  this.draw = function(){
+    background(250,250,250)
+  }
 }
