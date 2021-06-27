@@ -45,6 +45,7 @@ function homescreen1(){
   }
     function form(){
     mgr.showScene(questionpage)
+    background(250,250,250)
     btn2.hide()
     btn.hide()
     }
@@ -131,6 +132,7 @@ this.setup = function(){
       inp3.hide()
       btn2.show()
       btn.show()
+
     }
   }
 
@@ -181,48 +183,145 @@ this.setup = function(){
     let col3 = color(196, 196, 196)
     inp1 = createInput()
     inp1.style('background-color', col3)
-    inp1.position(200,250,278,57)
+    inp1.position(15,180,278,57)
     inp1.size(278,57)
 
 
     let col5 = color(255,255,255)
     inp4 = createInput()
     inp4.style('background-color',col5)
-    inp4.position(200,380)
+    inp4.position(15,360)
 
     inp5 = createInput()
     inp5.style('background-color',col3)
-    inp5.position(200,400)
+    inp5.position(15,380)
     inp5.size(278,29)
 
     let col6 = color(238, 238, 238)
     btn4 = createButton('next')
-    btn4.position(375,460)
+    btn4.position(163,427)
     btn4.style('background-color',col6)
     btn4.size(107,15)
     btn4.mousePressed(page1)
 
 
     function page1(){
-     mgr.showscene(questionpage2)
-     btn4.hide()
+      mgr.showScene(questionpage2)
+      background(250,250,250)
+      btn4.hide()
+      inp1.hide()
+      inp4.hide()
+      inp5.hide()
    }
+ }
 
 this.draw = function(){
   background(250,250,250)
   fill(250,250,250)
-  rect(190,10,300,450)
+  rect(10,20,300,450)
+  let l = "form for food request"
+  fill(0,0,0)
+  text(l,15,100,285,30)
+  qn1()
+  mcq()
 }
 
 function qn1(){
-    fill(255, 249, 238)
-    rect(495,100,278,29)
+  fill(255, 249, 238)
+  rect(15,140,285,30)
+  let j = 'What is your financial situation?';
+  fill(0,0,0)
+  text(j, 15, 140, 285, 30);
+  textSize(15)
+
+
 }
+function mcq(){
+  circles()
+  function circles(){
+    fill(196, 196, 196)
+    circle(20,280,15)
+    circle(20,310,15)
+    circle(20,340,15)
+    let k = '4 times a day'
+    fill(0,0,0)
+    text(k,40,275,100,30)
+    let m = '3 times a day'
+    fill(0,0,0)
+    text(m,40,305,100,30)
+    let n = '2 times a day'
+    fill(0,0,0)
+    text(n,40,335,100,30)
 
   }
+}
+}
+
+
+
+
+
+
+function questionpage2(){
+  this.setup = function(){
+    let col7 = color(255, 249, 238)
+    inp6 = createInput()
+    inp6.style('background-color',col7)
+    inp6.position(20, 80)
+    inp6.size(270,15)
+
+    inp7 = createInput()
+    inp7.position(20, 240)
+
+    inp8 = createInput()
+    inp8.position(20,300)
+
+    btn5 = createButton('end')
+    btn5.position(163,427)
+    btn5.size(107,15)
+    btn5.mousePressed(back)
+
+    function back(){
+      mgr.showScene(homescreen1)
+    inp6.hide()
+    inp7.hide()
+    inp8.hide()
+    btn5.hide()
+    btn.show()
+
+    }
+
+
+
+
+
+  }
+  this.draw = function(){
+    background(250,250,250)
+    fill(250,250,250)
+    rect(10,20,300,450)
+    othertext()
+
+}
+function othertext(){
+  let o = 'Please enter what other specifics you need, ie allergies, food preferences etc'
+  fill(0,0,0)
+  textSize(11)
+  text(o,20,40,240,300)
+  let p = 'Please enter your home address'
+  fill(0,0,0)
+  text(p,20,220,240,300)
+  let q = 'Please enter your postal code'
+  fill(0,0,0)
+  text(q,20,280,240,300)
+  let r = 'END OF FORM'
+  fill(0,0,0)
+  textSize(25)
+  text(r,60,350,240,300)
+
+
 
 }
 
-function questionpage2(){
-  background(250,250,250)
+
 }
