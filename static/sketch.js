@@ -6,6 +6,9 @@ function preload(){
   img = loadImage('../assets/food.jpeg')
   img1 = loadImage('../assets/food1.jpeg')
   img2 = loadImage('../assets/map.jpeg')
+  img4 = loadImage('../assets/FFTH.jpeg')
+  img5 = loadImage('../assets/foodbank.jpeg')
+  img6 = loadImage('../assets/WillingHearts.jpeg')
 
 }
 
@@ -50,14 +53,14 @@ function homescreen1(){
   }
     function form(){
     mgr.showScene(questionpage)
-    background(250,250,250)
+    background(255, 249, 238)
     btn2.hide()
     btn.hide()
     }
 
      this.draw = function(){
           background(255,255,255)
-          fill(255,255,255)
+          fill(255, 249, 238)
           rect(10,20,300,450)
           image(img1, 140, 87, 155, 150)
           image(img, 22, 260, 160, 137)
@@ -147,6 +150,8 @@ this.setup = function(){
       inp3.hide()
       btn2.show()
       btn.show()
+      btn8.hide()
+
 
     }
     function company(){
@@ -244,8 +249,8 @@ this.setup = function(){
  }
 
 this.draw = function(){
-  background(250,250,250)
-  fill(250,250,250)
+  background(255, 255, 255)
+  fill(255, 249, 238)
   rect(10,20,300,450)
   let l = "form for food request"
   fill(0,0,0)
@@ -309,6 +314,7 @@ function questionpage2(){
     btn5.size(107,15)
     btn5.mousePressed(back)
 
+
     function back(){
       mgr.showScene(homescreen1)
     inp6.hide()
@@ -325,8 +331,8 @@ function questionpage2(){
 
   }
   this.draw = function(){
-    background(250,250,250)
-    fill(250,250,250)
+    background(255, 255, 255)
+    fill(255, 249, 238)
     rect(10,20,300,450)
     image(img2, 15, 110, 290, 90)
     othertext()
@@ -354,9 +360,75 @@ function othertext(){
 function homescreen2(){
   this.setup = function(){
     inp9 = createInput()
-    inp9.position(20,300)
+    inp9.position(20,380)
   }
   this.draw = function(){
     background(250,250,250)
+    fill(255, 249, 238)
+    rect(10,20,300,450)
+    image(img4, 140,100,120,50)
+    image(img5, 140,160,120,50)
+    image(img6, 140,280,120,50)
+    businessforms()
+    codetext()
+    barcode()
   }
+  function businessforms(){
+    fill(250,250,250)
+    rect(20,40,120,50)
+    fill(250,250,250)
+    rect(20,100,120,50)
+    fill(250,250,250)
+    rect(20,160,120,50)
+    fill(250,250,250)
+    rect(20,220,120,50)
+    fill(250,250,250)
+    rect(20,280,120,50)
+
+
+  }
+  function barcode(){
+    fill(196, 196, 196)
+    rect(270,40,10,400)
+  }
+  function codetext(){
+    fill(250,250,250)
+    rect(20,40,120,50)
+    textSize(12)
+    let z = 'form requested by:'
+    fill(0,0,0)
+    text(z, 25,45,120,50)
+    fill(0,0,0)
+    text(z, 25,105,120,50)
+    fill(0,0,0)
+    text(z, 25,165,120,50)
+    fill(0,0,0)
+    text(z, 25,225,120,50)
+    fill(0,0,0)
+    text(z, 25,285,120,50)
+    let y = 'alpha'
+    fill(0,0,0)
+    text(y, 25,55,120,50)
+    let x = 'beta'
+    fill(0,0,0)
+    text(x, 25,115,120,50)
+    let u = 'bravo '
+    fill(0,0,0)
+    text(u, 25,235,120,50)
+    let v = 'delta'
+    fill(0,0,0)
+    text(v, 25,295,120,50)
+    let w = 'taken by:'
+    fill(0,0,0)
+    text(w, 180,25,120,50)
+    let t = 'please enter your company name:'
+    fill(0,0,0)
+    text(t,40, 340,120,50)
+
+
+
+
+  }
+
+
 }
